@@ -14,6 +14,7 @@ class Point {
     context.out;
     context.arc(this.x, this.y, rad, 0, Math.PI * 2);
     context.fill();
+
     if (outline) {
       context.beginPath();
       context.lineWidth = 2;
@@ -21,6 +22,7 @@ class Point {
       context.arc(this.x, this.y, rad * 0.6, 0, Math.PI * 2);
       context.stroke();
     }
+
     if (fill) {
       context.beginPath();
       context.arc(this.x, this.y, rad * 0.4, 0, Math.PI * 2);
