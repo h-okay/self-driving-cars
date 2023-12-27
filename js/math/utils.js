@@ -20,7 +20,7 @@ function add(p1, p2) {
   return new Point(p1.x + p2.x, p1.y + p2.y);
 }
 
-function substract(p1, p2) {
+function subtract(p1, p2) {
   return new Point(p1.x - p2.x, p1.y - p2.y);
 }
 
@@ -77,6 +77,10 @@ function getIntersection(A, B, C, D) {
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
+}
+
+function lerp2D(A, B, t) {
+  return new Point(lerp(A.x, B.x, t), lerp(A.y, B.y, t));
 }
 
 function getRandomColor() {

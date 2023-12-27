@@ -22,7 +22,7 @@ class Viewport {
       (e.offsetX - this.center.x) * this.zoom - this.offset.x,
       (e.offsetY - this.center.y) * this.zoom - this.offset.y
     );
-    return substractDrafOffset ? substract(p, this.drag.offset) : p;
+    return substractDrafOffset ? subtract(p, this.drag.offset) : p;
   }
 
   #addEventListeners() {
@@ -49,7 +49,7 @@ class Viewport {
   #handleMouseMove(e) {
     if (this.drag.active) {
       this.drag.end = this.getMouse(e);
-      this.drag.offset = substract(this.drag.end, this.drag.start);
+      this.drag.offset = subtract(this.drag.end, this.drag.start);
     }
   }
 

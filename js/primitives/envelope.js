@@ -8,7 +8,7 @@ class Envelope {
     const { pointOne, pointTwo } = this.skeleton;
 
     const radius = width / 2;
-    const alpha = angle(substract(pointOne, pointTwo));
+    const alpha = angle(subtract(pointOne, pointTwo));
     const alpha_cw = alpha + Math.PI / 2; // clockwise
     const alpha_ccw = alpha - Math.PI / 2; // counter clockwise
 

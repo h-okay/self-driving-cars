@@ -28,7 +28,7 @@ class Segment {
   }
 
   directionVector() {
-    return normalize(substract(this.pointTwo, this.pointOne));
+    return normalize(subtract(this.pointTwo, this.pointOne));
   }
 
   distanceToPoint(point) {
@@ -42,8 +42,8 @@ class Segment {
   }
 
   projectPoint(point) {
-    const a = substract(point, this.pointOne);
-    const b = substract(this.pointTwo, this.pointOne);
+    const a = subtract(point, this.pointOne);
+    const b = subtract(this.pointTwo, this.pointOne);
     const normB = normalize(b);
     const scaler = dot(a, normB);
     const proj = {
