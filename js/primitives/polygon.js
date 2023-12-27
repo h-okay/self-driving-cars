@@ -91,6 +91,27 @@ class Polygon {
     return intersectionCount % 2 === 1;
   }
 
+  distanceToPoint(point) {
+    return Math.min(...this.segments.map((s) => s.distanceToPoint(point)));
+  }
+
+  distanceToPoly(poly) {
+    return Math.min(...this.points.map((p) => poly.distanceToPoint(p)));
+  }
+
+  intersectsPoly(poly) {
+    for (let s1 of this.segments) {
+      for (let s2 of poly.segments) {
+        if (
+          getIntersection(s1.pointOne, s1.pointTwo, s2.pointOne, s2.pointTwo)
+        ) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   draw(
     context,
     { stroke = "blue", lineWidth = 2, fill = "rgba(0,0,255,0.3)" } = {}
