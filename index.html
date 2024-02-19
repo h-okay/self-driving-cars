@@ -5,9 +5,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>Hello World</h1>
     <canvas id="myCanvas"></canvas>
-
     <div id="controls">
       <button onclick="dispose()">🗑️</button>
       <button onclick="save()">💾</button>
@@ -59,8 +57,8 @@
     <script src="js/primitives/envelope.js"></script>
 
     <script>
-      myCanvas.width = 1280;
-      myCanvas.height = 720;
+      myCanvas.width = window.innerWidth;
+      myCanvas.height = window.innerHeight - 35;
 
       const ctx = myCanvas.getContext("2d");
 
