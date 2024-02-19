@@ -1,11 +1,11 @@
 class Viewport {
-  constructor(canvas) {
+  constructor(canvas, zoom = 1, offset = null) {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
 
-    this.zoom = 1;
+    this.zoom = zoom;
     this.center = new Point(canvas.width / 2, canvas.height / 2);
-    this.offset = scale(this.center, -1);
+    this.offset = offset ? offset : scale(this.center, -1);
 
     this.drag = {
       start: new Point(0, 0),
@@ -26,7 +26,10 @@ class Viewport {
   }
 
   #addEventListeners() {
-    this.canvas.addEventListener("mousewheel",this.#handleMouseWheel.bind(this));
+    this.canvas.addEventListener(
+      "mousewheel",
+      this.#handleMouseWheel.bind(this)
+    );
     this.canvas.addEventListener("mousedown", this.#handleMouseDown.bind(this));
     this.canvas.addEventListener("mousemove", this.#handleMouseMove.bind(this));
     this.canvas.addEventListener("mouseup", this.#handleMouseUp.bind(this));
