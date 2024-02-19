@@ -3,7 +3,7 @@ class Tree {
     this.center = center;
     this.size = size;
     this.heigthCoef = heigthCoef;
-    this.base = this.#generateLevel(center, size)
+    this.base = this.#generateLevel(center, size);
   }
 
   #generateLevel(point, size) {
