@@ -6,6 +6,6 @@ Create 3D worlds using JS right in your browser.
 
 
 ### What is planned
-- UI Improvements (Tooltips etc.)
+- UI Improvements
 - Moving roads also moves objects attached
 - Add neural network to make the cars self-driving
